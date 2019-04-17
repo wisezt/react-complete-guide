@@ -13,8 +13,8 @@ class App extends Component {
 	  */
 	  
 	  return React.createElement('div', null, '', 'h1', 'hi, I\'m a React App!!!')
-    )
-  }
+    
+  };
 }
 
 export default App;
