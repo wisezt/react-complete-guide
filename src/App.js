@@ -9,8 +9,6 @@ const app = props => {
          {name: 'Ting01', age: '16'},
          {name: 'Ting02', age: '26'},
          {name: 'Ting03', age: '36'}
-
-
      ]
  });
 
@@ -26,9 +24,20 @@ const app = props => {
 
          }
      );
+ }
+
+ const nameChangeHandler = (event) => {
+     setPersonsState({
+         persons: [
+             {name: 'Max', age: '16'},
+             {name: event.target.value, age: '26'},
+             {name: 'Ting03', age: '36'}
+         ]
 
 
 
+         }
+     )
 
  }
 
@@ -40,8 +49,16 @@ const app = props => {
        <h1>Hi, I'am  a React App</h1>
 	   <p>This is working</p>
           <button onClick={switchNameHandler}> Switch Name</button>
-          <Person name = {personsState.persons[0].name} age= {personsState.persons[0].age} />
-          <Person name = {personsState.persons[1].name} age= {personsState.persons[1].age} />
+          <Person
+              name = {personsState.persons[0].name}
+              age= {personsState.persons[0].age} />
+          <Person
+              name = {personsState.persons[1].name}
+              age= {personsState.persons[1].age}
+              clinik={switchNameHandler}
+              changed={nameChangeHandler}
+          />
+
 	
       </div>
 	  );
